@@ -1,4 +1,3 @@
-## INFO133
-# Consultas SGBD Relacionales
+## INFO133: Consultas SGBD Relacionales
 
 <code> codigo </code>
