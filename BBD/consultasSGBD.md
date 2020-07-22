@@ -1,3 +1,4 @@
-# INFO33 : Base de datos
+## INFO133
+# Consultas SGBD Relacionales
 
 <code> codigo </code>
