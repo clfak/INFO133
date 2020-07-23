@@ -30,12 +30,11 @@ BETWEEN 2010 AND 2020;
 
 ~~~~
 SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_cliente, 
-e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado, 
-YEAR(p.paymentDate)  AS year, amount AS monto
+e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado,amount AS monto
 FROM customers c
 JOIN payments p ON c.customerNumber = p.customerNumber
 JOIN employees e ON p.salesRepEmployeesNumber= e.employeeNumber
-WHERE YEAR 
+WHERE YEAR(p.paymentDate) 
 BETWEEN 2010 AND 2020;
 ~~~~
 
