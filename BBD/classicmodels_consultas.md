@@ -120,9 +120,25 @@ FROM products t1
 INNER JOIN productlines t2 ON t1.productline = t2.productline;
 ~~~~
 
+Ejercicios con __JOIN__
 
+* Ver el nombre y el email de los empleados que trabajan en la oficina de Boston: 
 
+~~~~
+SELECT e.firstName, e.lastName, o.city, e.email  
+FROM employees e INNER JOIN offices o 
+ON e.officeCode = o.officeCode 
+WHERE o.city = "Boston";
+~~~~
 
+* Ver los nombres y la descripción de los productos que fueron comprado en la factura (order)  10100: 
+
+~~~~
+SELECT p.productName, p.productDescription
+FROM products p
+JOIN orderDetails o ON p.productCode = o.productCode
+WHERE o.orderNumber = 10100;
+~~~~
 
 
 
