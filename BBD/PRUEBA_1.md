@@ -15,5 +15,54 @@ SELECT c.contactFirstName, c.contactLastName
 FROM customers c
 WHERE c.country = ‘Chile’ 
 AND c.creditlimit > 100;
+~~~~
+
+* Mostrar el apellido y nombre de cada cliente (tabla “Customers”), la fecha y el monto de cada pago que realizaron (tabla “Payments”), mostrando los pagos realizados entre el año 2010 y 2020.
+~~~~
+SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_cliente, 
+YEAR(p.paymentDate) AS year, amount AS monto
+FROM customers c
+JOIN payments p ON c.customerNumber = p.customerNumber
+WHERE YEAR 
+BETWEEN 2010 AND 2020;
+~~~~
+
+* Misma consulta que la anterior, pero agregando el número y el nombre del empleado que ha vendido los productos por cada pago realizado entre 2010 y 2020.
 
 ~~~~
+SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_cliente, 
+e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado, 
+YEAR(p.paymentDate)  AS year, amount AS monto
+FROM customers c
+JOIN payments p ON c.customerNumber = p.customerNumber
+JOIN employees e ON p.salesRepEmployeesNumber= e.employeeNumber
+WHERE YEAR 
+BETWEEN 2010 AND 2020;
+~~~~
+
+* Utilizando la tabla “Payments”, mostrar en qué año el monto total de los pagos fue el más alto. (se podrá utilizar la clausúla “order by” o “limit”).
+
+~~~
+SELECT YEAR(p.paymentsDate)as year,  sum(p.amount) AS montoTotal
+FROM payments p
+GROUP BY YEAR(p.paymentsDate)
+ORDER BY montoTotal DESC
+LIMIT 1;
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
