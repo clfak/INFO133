@@ -4,9 +4,9 @@
 
 > mysql -u root -p
 
-<codigo> source sakila-schema.sql </codigo>
+<code> source sakila-schema.sql </code>
 
-<codigo> source sakila-data.sql </codigo>
+<code> source sakila-data.sql </code>
 
 * ¿Cuáles son las películas sin actores?
 
