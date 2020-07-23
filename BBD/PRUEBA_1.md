@@ -41,10 +41,10 @@ BETWEEN 2010 AND 2020;
 * Utilizando la tabla “Payments”, mostrar en qué año el monto total de los pagos fue el más alto. (se podrá utilizar la clausúla “order by” o “limit”).
 
 ~~~
-SELECT YEAR(p.paymentsDate)as year,  sum(p.amount) AS montoTotal
-FROM payments p
-GROUP BY YEAR(p.paymentsDate)
-ORDER BY montoTotal DESC
+SELECT YEAR(p.paymentDate) AS year,  sum(p.amount) AS montoTotal 
+FROM payments p 
+GROUP BY YEAR(p.paymentDate) 
+ORDER BY montoTotal DESC 
 LIMIT 1;
 ~~~
 
