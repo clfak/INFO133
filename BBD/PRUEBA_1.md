@@ -33,7 +33,7 @@ SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_clien
 e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado,amount AS monto
 FROM customers c
 JOIN payments p ON c.customerNumber = p.customerNumber
-JOIN employees e ON p.salesRepEmployeesNumber= e.employeeNumber
+JOIN employees e ON c.SalesRepEmployeeNumber= e.employeeNumber
 WHERE YEAR(p.paymentDate) 
 BETWEEN 2010 AND 2020;
 ~~~~
