@@ -37,6 +37,8 @@ NOTA 1 : Multiplica la cantidad de órdenes por el precio y muestra una columna 
 
 > quantityOrdered * priceEach AS subtotal
 
+--- 
+
 __EJERCICIOS__
 
 * Mostrar la lista de los productos ordenados por el stock disponible del más grande al más pequeño:
@@ -47,11 +49,76 @@ FROM products
 ORDER BY quantityInStock DESC;
 ~~~~
 
+* Mostrar los 3 últimos pedidos(orders): 
+
+~~~~
+SELECT orderNumber, orderDate 
+FROM orders 
+ORDER BY orderDate DESC LIMIT 3;
+
+~~~~
 
 
+* Mostrar los productos que corresponden a una línea de productos que contiene la palabra "Cars" en su nombre: 
+
+~~~~
+SELECT  productline 
+FROM productlines 
+WHERE productline LIKE '%Cars%';
+
+~~~~
 
 
+* Mostrar los productos que no son de tipo "Planes" y "Motorcycles".
 
+~~~~
+SELECT  productline 
+FROM productlines 
+WHERE productline NOT LIKE  '%Planes%' 
+AND productline NOT LIKE '%Motorcycles%';
+~~~~
+
+ó también: 
+~~~~
+SELECT  productline 
+FROM productlines 
+WHERE  NOT   (productline LIKE '%Planes%' 
+OR productline  LIKE '%Motorcycles%');
+~~~~
+
+----
+
+> 'AS' para el alias
+
+~~~~
+SELECT  customername 
+AS `name` 
+FROM  customers;
+~~~~
+
+> Concatenar
+
+~~~~
+SELECT CONCAT_WS(', ', e.lastName, e.firstname) AS `Full name`
+FROM employees e;
+ ~~~~
+
+__JOIN__
+
+
+~~~~
+SELECT productCode, productName
+FROM products
+INNER JOIN productlines USING (productline);
+~~~~
+
+Muestra la misma información que: 
+
+~~~~
+SELECT productCode, productName
+FROM products t1
+INNER JOIN productlines t2 ON t1.productline = t2.productline;
+~~~~
 
 
 
