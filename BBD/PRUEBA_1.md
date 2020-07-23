@@ -19,11 +19,10 @@ AND c.creditlimit > 100;
 
 * Mostrar el apellido y nombre de cada cliente (tabla “Customers”), la fecha y el monto de cada pago que realizaron (tabla “Payments”), mostrando los pagos realizados entre el año 2010 y 2020.
 ~~~~
-SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_cliente, 
-YEAR(p.paymentDate) AS year, amount AS monto
+SELECT c.contactFirstName AS nombre_cliente, c.contactLastName AS apellido_cliente,amount AS monto
 FROM customers c
 JOIN payments p ON c.customerNumber = p.customerNumber
-WHERE YEAR 
+WHERE YEAR(p.paymentDate)
 BETWEEN 2010 AND 2020;
 ~~~~
 
