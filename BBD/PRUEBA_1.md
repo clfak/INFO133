@@ -13,7 +13,7 @@ __Nota bene:__ En este modelo relacional, los atributos de tipo “clave primar�
 ~~~~
 SELECT c.contactFirstName, c.contactLastName
 FROM customers c
-WHERE c.country = ‘Chile’ 
+WHERE c.country = "Chile" 
 AND c.creditlimit > 100;
 ~~~~
 
