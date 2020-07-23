@@ -1,15 +1,14 @@
 ## INFO133: Consultas SGBD Relacionales
 
-* Importar la base de datos 'sakila'
-
 > mysql -u root -p
+
+* Importar la base de datos 'sakila'
 
 <code> source sakila-schema.sql </code>
 
 <code> source sakila-data.sql </code>
 
 * ¿Cuáles son las películas sin actores?
-
 
 ~~~~
 SELECT film.film_id, film.title
