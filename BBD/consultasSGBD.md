@@ -34,3 +34,9 @@ INNER JOIN rental r ON  r.inventory_id=i.inventory_id;
 __Ejercicios:__
 
 1. Mostrar el 'firstname' y 'lastname' de los clientes activos (active):
+
+~~~
+SELECT first_name, last_name
+FROM customer 
+WHERE active=1;
+~~~
