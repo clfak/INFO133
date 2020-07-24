@@ -64,8 +64,11 @@ HAVING cantidad_activos >= 10
 ORDER BY cantidad_activos DESC;
 ~~~
 
+4. Mostrar los titulos y descripción de peliculas que contienen la palabra "dog" en du descripción: 
 
+~~~~
 
+~~~~
 
 
 
