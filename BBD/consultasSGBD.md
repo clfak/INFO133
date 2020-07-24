@@ -31,5 +31,8 @@ SELECT a.actor_id, a.first_name, a.last_name, fa.film_id, f.title FROM actor a L
 * Mostrar las peliculas arrendadas según el día de la semana:
 
 ~~~
-
+SELECT f.title, DAYOFWEEK(rental_date) 
+FROM film f 
+INNER JOIN inventory i ON i.film_id=f.film_id 
+INNER JOIN rental r ON  r.inventory_id=i.inventory_id;
 ~~~
