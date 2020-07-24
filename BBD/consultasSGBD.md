@@ -40,3 +40,9 @@ SELECT first_name, last_name
 FROM customer 
 WHERE active=1;
 ~~~
+
+2. Contar el número de clientes activos por paises:
+
+~~~
+
+~~~
