@@ -18,6 +18,7 @@ WHERE film_actor.film_id IS NULL;
 ~~~~
 
 * ¿Cuáles son los actores sin peliculas?
+
 <code> completar </code>
 
 * Mostrar las peliculas arrendadas según el día de la semana:
@@ -28,3 +29,8 @@ FROM film f
 INNER JOIN inventory i ON i.film_id=f.film_id 
 INNER JOIN rental r ON  r.inventory_id=i.inventory_id;
 ~~~
+
+---
+__Ejercicios:__
+
+1. Mostrar el 'firstname' y 'lastname' de los clientes activos (active):
