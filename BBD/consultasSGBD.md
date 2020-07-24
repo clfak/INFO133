@@ -38,11 +38,37 @@ __Ejercicios:__
 ~~~
 SELECT first_name, last_name
 FROM customer 
-WHERE active=1;
+WHERE active=true;
 ~~~
 
 2. Contar el número de clientes activos por paises:
-
+~~~
+SELECT c.country,count(*) AS cantidad_activos
+FROM country c INNER JOIN city ci ON ci.country_id=c.country_id 
+INNER JOIN address a ON ci.city_id=a.city_id 
+INNER JOIN customer cm ON cm.address_id=a.address_id 
+WHERE cm.active=true 
+GROUP BY c.country_id 
+ORDER BY c.country ASC;
 ~~~
 
+3. Mostrar los paises dónde hay al menos 10 clientes activos, ordenados del número más grande al más pequeño: 
 ~~~
+SELECT c.country,count(*) AS cantidad_activos
+FROM country c INNER JOIN city ci ON ci.country_id=c.country_id 
+INNER JOIN address a ON ci.city_id=a.city_id 
+INNER JOIN customer cm ON cm.address_id=a.address_id 
+WHERE cm.active=true 
+GROUP BY c.country_id 
+HAVING cantidad_activos >= 10
+ORDER BY cantidad_activos DESC;
+~~~
+
+
+
+
+
+
+
+
+
