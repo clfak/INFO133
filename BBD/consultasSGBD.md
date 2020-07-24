@@ -73,7 +73,7 @@ WHERE f.description
 LIKE '%dog%'
 ~~~~
 
-5. Mostrar los titulos y descripción de peliculas que más fueron arrendadas, ordenadas de del número más grande al más pequeño.
+5. Mostrar los titulos y descripción de peliculas que más fueron arrendadas, ordenadas de del número más grande al más pequeño:
 
 
 
