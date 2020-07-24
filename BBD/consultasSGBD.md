@@ -11,8 +11,8 @@
 * ¿Cuáles son las películas sin actores?
 
 ~~~~
-SELECT film.film_id, film.title
-FROM film 
+SELECT f.film_id, f.title
+FROM film f
 LEFT JOIN film_actor USING (film_id)
 WHERE film_actor.film_id IS NULL;
 ~~~~
