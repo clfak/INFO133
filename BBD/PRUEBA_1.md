@@ -48,11 +48,29 @@ ORDER BY montoTotal DESC
 LIMIT 1;
 ~~~
 
+* Mostrar el monto de pagos realizados (tabla "Payments") por cada empleado en el periodo 2010-2020
+~~~
+SELECT e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado,  sum(p.amount) AS montoTotal
+FROM payments p
+JOIN customers c ON c.customerNumber = p.customerNumber
+JOIN employees e ON p.SalesRepEmployeeNumber= e.employeeNumber
+WHERE YEAR(p.paymentDate) BETWEEN 2010 AND 2020
+GROUP BY e.employeeNumber
+ORDER BY montoTotal;
+~~~
 
+* Misma consulta anterior, pero mostrando solamente los empleados que están asociados a un total de pagos superior a los $100.000
 
-
-
-
+~~~~
+SELECT e.employeeNumber, e.FirstName AS nombre_empleado, e.LastName AS apellido_empelado,  sum(p.amount) AS montoTotal 
+FROM payments p 
+JOIN customers c ON c.customerNumber = p.customerNumber 
+JOIN employees e ON c.SalesRepEmployeeNumber= e.employeeNumber 
+WHERE YEAR(p.paymentDate) BETWEEN 2010 AND 2020 
+GROUP BY e.employeeNumber 
+HAVING montoTotal >= 100000 
+ORDER BY montoTotal DESC;
+~~~~
 
 
 
