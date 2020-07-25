@@ -75,6 +75,12 @@ LIKE '%dog%'
 
 5. Mostrar los titulos y descripción de peliculas que más fueron arrendadas, ordenadas de del número más grande al más pequeño:
 
-
+~~~~
+SELECT f.title, f.description, count(*) AS masArrendadas 
+FROM rental r INNER JOIN inventory i ON r.inventory_id=i.inventory_id 
+INNER JOIN film f ON f.film_id=i.film_id 
+GROUP BY r.inventory_id 
+ORDER BY masArrendadas DESC;
+~~~~
 
 
