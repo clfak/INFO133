@@ -19,6 +19,8 @@ WHERE film_actor.film_id IS NULL;
 
 * ¿Cuáles son los actores sin peliculas?
 
+SELECT 
+
 <code> completar </code>
 
 * Mostrar las peliculas arrendadas según el día de la semana:
@@ -29,8 +31,20 @@ FROM film f
 INNER JOIN inventory i ON i.film_id=f.film_id 
 INNER JOIN rental r ON  r.inventory_id=i.inventory_id;
 ~~~
+* Los los 10 actores que han participado en más películas: 
 
+~~~
+SELECT a.first_name,a.last_name, count(*) AS cantidad_peliculas  
+FROM actor a 
+JOIN film_actor fa ON a.actor_id=fa.actor_id 
+JOIN film f ON f.film_id=fa.film_id 
+GROUP BY a.actor_id 
+ORDER BY cantidad DESC 
+LIMIT 10;
+~~~
 ---
+
+
 __Ejercicios:__
 
 1. Mostrar el 'firstname' y 'lastname' de los clientes activos (active):
