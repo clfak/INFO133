@@ -51,6 +51,15 @@ JOIN city ci ON ci.city_id=a.city_id
 JOIN country co ON co.country_id=ci.country_id 
 WHERE co.country LIKE'S%';
 ~~~
+* Mostrar el top-10 de países con más clientes:
+~~~
+SELECT c.country, count(*) AS cantidad_clientes 
+FROM country c JOIN city ci ON ci.country_id=c.country_id JOIN address a ON ci.city_id=a.city_id 
+JOIN customer cu ON cu.address_id=a.address_id 
+GROUP BY c.country_id 
+ORDER BY cantidad_clientes DESC 
+LIMIT 10;
+~~~
 
 ---
 
