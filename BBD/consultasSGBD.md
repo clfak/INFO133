@@ -88,6 +88,22 @@ GROUP BY cm.customer_id
 ORDER BY cant_alquiler DESC 
 LIMIT 10;
 ~~~
+* Mostrar la popularidad de las categorías cinematográficas entre los clientes españoles:
+~~~
+SELECT cat.name,count(*) AS alquileres 
+FROM category cat 
+JOIN film_category fc ON cat.category_id=fc.category_id 
+JOIN film f ON fc.film_id = f.film_id 
+JOIN inventory i ON f.film_id = i.film_id 
+JOIN rental r ON i.inventory_id=r.inventory_id 
+JOIN customer cm ON r.customer_id=cm.customer_id 
+JOIN address a ON cm.address_id=a.address_id 
+JOIN city ci ON a.city_id=ci.city_id 
+JOIN country ct ON ci.country_id=ct.country_id 
+WHERE ct.country LIKE 'Spain' 
+GROUP BY cat.category_id 
+ORDER BY alquileres DESC;
+~~~
 ---
 
 
