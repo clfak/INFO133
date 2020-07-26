@@ -60,7 +60,16 @@ GROUP BY c.country_id
 ORDER BY clientes DESC 
 LIMIT 10;
 ~~~
+* Mostrar las 10 primeras películas alfabéticamente y el número de copias que se disponen de cada una de ellas: 
 
+~~~
+SELECT f.title, count(*) AS cantidad 
+FROM inventory i 
+JOIN film f ON f.film_id=i.film_id 
+GROUP BY i.film_id 
+ORDER BY f.title 
+LIMIT 10;
+~~~
 ---
 
 
