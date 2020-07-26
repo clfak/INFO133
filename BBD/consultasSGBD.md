@@ -42,6 +42,16 @@ GROUP BY a.actor_id
 ORDER BY cantidad DESC 
 LIMIT 10;
 ~~~
+* Mostrar los clientes de países que empiezan con la letra 'S':
+~~~
+SELECT c.first_name, c.last_name, co.country 
+FROM customer c 
+JOIN address a ON a.address_id=c.address_id 
+JOIN city ci ON ci.city_id=a.city_id 
+JOIN country co ON co.country_id=ci.country_id 
+WHERE co.country LIKE'S%';
+~~~
+
 ---
 
 
@@ -83,8 +93,7 @@ ORDER BY cantidad_activos DESC;
 ~~~~
 SELECT title, description 
 FROM film f
-WHERE f.description 
-LIKE '%dog%'
+WHERE f.description LIKE '%dog%'
 ~~~~
 
 5. Mostrar los titulos y descripción de peliculas que más fueron arrendadas, ordenadas de del número más grande al más pequeño:
