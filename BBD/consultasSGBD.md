@@ -70,6 +70,16 @@ GROUP BY i.film_id
 ORDER BY f.title 
 LIMIT 10;
 ~~~
+* Saca todas las películas que ha alquilado el cliente Deborah Walker: 
+
+SELECT f.tittle 
+FROM film f 
+JOIN inventory i ON f.film_id=i.inventory_id
+JOIN rental r ON i.inventory_id=r.inventory_id
+JOIN customer cm ON r.customer_id = cm.customer_id
+WHERE cm.first_name LIKE 'Deborah' AND cm.last_name LIKE 'Walker';
+~~~
+~~~
 ---
 
 
