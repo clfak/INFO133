@@ -1,6 +1,24 @@
 ## INFO133 Base de Datos
 # PRUEBA 1
 
+### Ejercicio 1: Modelamiento (~45 minutos)
+
+__Caso de estudio: Base de datos “Sophia2”__
+
+Un equipo de investigación valdiviana desarrolló varios scripts que recopilan datos sobre los distintos medios de prensa de varios países del mundo.
+
+Por cada medio de prensa se conoce su nombre, el url de su sitio web en el cual publica noticias, el país, el continente del medio, su idioma principal y una categoría que indica si se trata de medio nacional, regional o local. Cada medio posee uno o varios dueños identificados por un nombre. Los dueños pueden ser personas reales o personas jurídicas. En la base de datos se quiere guardar el periodo en la cual un dueño posee un medio.
+
+Cada medio puede poseer distintos canales sociales donde publica regularmente enlaces hacia sus noticias. Un canal social está identificado por el id de la cuenta y el nombre de la red social (por ejemplo Facebook, Twitter, etc.). Cada canal social tiene una audiencia que corresponde al número de followers que sigue este canal. El equipo de investigación indica que esta audiencia puede cambiar en el tiempo y que le interesa conservar la información histórica.
+
+Los medios de prensa publican noticias que se caracterizan por un título, un texto, una fecha de publicación y opcionalmente una imagen de ilustración. El equipo de investigación considera que una noticia proviene de uno solo medio. Las noticias son escritas por un periodista al máximo. Interesa guardar en la base de datos el nombre y el género del periodista.
+
+Finalmente, el equipo de investigación utiliza técnicas de tratamiento automático del lenguaje para extraer los nombres de personas, o fuentes, citadas en las noticias. Una noticia puede mencionar una o varias fuentes, y una misma fuente puede ser citada en varias noticias. Se guarda en la base de datos, el nombre y el género de estas fuentes, como tambíen la frase que menciona una fuente en una noticia.
+
+* Proponer un modelo Entidad-Relación del caso de estudio siguiente. Utilizarán símbolos utilizados en clase para describir las ___entidades, relaciones, atributos___ y ___cardinalidades___. No indicarán las claves primarias y foráneas en su modelo. Su modelo no podrá incluir atributos multivaluados.
+
+
+
 ### Ejercicio 2: Consultas SQL 
 
 Estamos utilizando la Base de Datos ‘classicmodels’ que almacena información de una empresa que vende modelos de autos. La Base de Datos tiene el 
