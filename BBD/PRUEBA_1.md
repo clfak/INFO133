@@ -19,6 +19,25 @@ Finalmente, el equipo de investigación utiliza técnicas de tratamiento automá
 
 __R:__ [Respuesta](Diagrama_prueba1_sophia.png)
 
+* A partir del modelo Entidad-Relación obtenido, realizar las transformaciones relevantes para obtener un modelo Relacional.Su Modelo Relacional deberá indicar explícitamente las claves primarias y foráneas. No es necesario especificar el tipo de datos asociado a cada atributo.
+
+> **Medios_de_prensa**(___url___, nombre, pais,continente,idioma,categoría)
+
+> **Canales**(___id_canal___,red_social, #url_media)
+
+> **Periodistas** (___nombre___,género)
+
+> **Noticias**(___id_noticia___, título, texto, fecha, imagen, #url_media, #nombrePeriodista)
+
+> **Fuentes**(___nombre___,género)
+
+> **Referencia**(___#nombreFuente,#id_noricia___,frase)
+
+> **Duenos** (___nombreDueño___, tipo)
+
+> **Posee**(___nombreDueño,#url_medio,inicio___, fin)
+
+
 ### Ejercicio 2: Consultas SQL 
 
 Estamos utilizando la Base de Datos ‘classicmodels’ que almacena información de una empresa que vende modelos de autos. La Base de Datos tiene el 
@@ -90,7 +109,8 @@ HAVING montoTotal >= 100000
 ORDER BY montoTotal DESC;
 ~~~~
 
-
+```
+```
 
 
 
