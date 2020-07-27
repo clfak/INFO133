@@ -17,7 +17,7 @@ Finalmente, el equipo de investigación utiliza técnicas de tratamiento automá
 
 * Proponer un modelo Entidad-Relación del caso de estudio siguiente. Utilizarán símbolos utilizados en clase para describir las ___entidades, relaciones, atributos___ y ___cardinalidades___. No indicarán las claves primarias y foráneas en su modelo. Su modelo no podrá incluir atributos multivaluados.
 
-
+__Respuesta__ [aqui](Diagrama_prueba1_sophia.png)
 
 ### Ejercicio 2: Consultas SQL 
 
