@@ -104,6 +104,25 @@ WHERE ct.country LIKE 'Spain'
 GROUP BY cat.category_id 
 ORDER BY alquileres DESC;
 ~~~
+
+* Mostrar los 10 actores más populares en Argentina: 
+
+~~~
+SELECT act.first_name, act.last_name, count(*) AS alquileres  
+FROM actor act 
+JOIN film_actor fma ON act.actor_id=fma.actor_id 
+JOIN film f ON fma.film_id = f.film_id 
+JOIN inventory i ON f.film_id = i.film_id  
+JOIN rental r ON i.inventory_id=r.inventory_id  
+JOIN customer cm ON r.customer_id=cm.customer_id  
+JOIN address a ON cm.address_id=a.address_id  
+JOIN city ci ON a.city_id=ci.city_id  
+JOIN country ct ON ci.country_id=ct.country_id
+WHERE ct.country LIKE 'Argentina'  
+GROUP BY act.actor_id  
+ORDER BY alquileres DESC 
+LIMIT 10;
+~~~
 ---
 
 
