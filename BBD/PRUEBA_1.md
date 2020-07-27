@@ -108,16 +108,3 @@ GROUP BY e.employeeNumber
 HAVING montoTotal >= 100000 
 ORDER BY montoTotal DESC;
 ~~~~
-
-```
-⊙﹏⊙
-```
-
-
-
-
-
-
-
-
-
