@@ -217,14 +217,32 @@ ORDER BY Volumen DESC
 LIMIT 1;
 ~~~
 
+9. Mostrar los títulos de pelicula que generaron más de cierto valor de volumen de negocio: 
+~~~
+SELECT f.title,SUM(p.amount) as Volumen 
+FROM film f
+JOIN inventory i ON f.film_id=i.film_id
+JOIN rental r ON i.inventory_id=r.inventory_id 
+JOIN payment p on r.rental_id=p.rental_id 
+GROUP BY f.film_id
+HAVING Volumen >100
+ORDER BY Volumen DESC;
+~~~
 
-
-
-
-
-
-
-
+10. Contar cuántos Staff distintos han arrendados la pelicula que generó más volumen de negocio: 
+~~~
+SELECT count(DISTINCT r.staff_id) AS n_staff
+FROM rental r
+JOIN inventory i ON r.inventory_id=i.inventory_id
+WHERE i.film_id = (SELECT f.film_id
+                   FROM film f
+                   JOIN inventory i ON i.film_id=f.film_id
+                   JOIN rental r ON r.inventory_id=i.inventory_id
+                   JOIN payment p ON p.rental_id=r.rental_id
+                   GROUP BY f.film_id
+                   ORDER BY SUM(p.amount) DESC
+                   LIMIT 1);
+ ~~~
 
 
 
