@@ -289,8 +289,19 @@ GROUP BY Mes, Año
 ORDER BY Año;
 ~~~
 
-
-
+* ¿Cuáles son los actores que más generan volumen de negocio?
+~~~
+SELECT a.first_name, a.last_name, SUM(p.amount) as Volumen
+FROM actor a
+JOIN film_actor USING (actor_id)
+JOIN film USING (film_id)
+JOIN inventory USING(film_id)
+JOIN rental USING(inventory_id) 
+JOIN payment p USING(rental_id) 
+GROUP BY a.actor_id
+ORDER BY Volumen DESC
+LIMIT 10;
+~~~
 
 
 
