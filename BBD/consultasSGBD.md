@@ -20,9 +20,9 @@ WHERE film_actor.film_id IS NULL;
 * ¿Cuáles son los actores sin peliculas?
 
 ~~~
-SELECT fa.actor_id 
-FROM film f 
-RIGHT JOIN film_actor fa USING (film_id) 
+SELECT a.first_name, a.last_name 
+FROM actor a 
+LEFT JOIN film_actor fa USING (actor_id) 
 WHERE fa.film_id is NULL;
 ~~~
 
