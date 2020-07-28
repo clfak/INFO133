@@ -205,8 +205,17 @@ WHERE r.rental_date BETWEEN  '2005-05-24' AND '2005-06-01'
 GROUP BY f.film_id
 ORDER BY Volumen DESC;
 ~~~
-
-
+* Mostrar título de la pelicula que generó más volumen de negocio:
+~~~
+SELECT f.title,SUM(p.amount) as Volumen 
+FROM film f
+JOIN inventory i ON f.film_id=i.film_id
+JOIN rental r ON i.inventory_id=r.inventory_id 
+JOIN payment p on r.rental_id=p.rental_id 
+GROUP BY f.film_id
+ORDER BY Volumen DESC
+LIMIT 1;
+~~~
 
 
 
