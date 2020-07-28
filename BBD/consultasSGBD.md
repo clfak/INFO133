@@ -185,3 +185,51 @@ ORDER BY masArrendadas DESC;
 ~~~
 
 6. Mostrar las peliculas que nunca fueron arrendadas entre dos fechas:
+~~~
+SELECT f.title
+FROM film f 
+JOIN inventory i USING (film_id)
+JOIN rental r USING(inventory_id)
+WHERE rental_date NOT  BETWEEN  '2005-05-24' AND '2006-01-21'
+GROUP BY film_id;
+~~~
+
+7. Mostrar el volumen de negocio (ver tabla Payment) asociado a cada pelicula entre dos fechas, ordenado del volumen de negocio más grande al más pequeño: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
