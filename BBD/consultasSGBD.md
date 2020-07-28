@@ -243,13 +243,41 @@ WHERE i.film_id = (SELECT f.film_id
                    ORDER BY SUM(p.amount) DESC
                    LIMIT 1);
  ~~~
+ 
+ 11. Mostrar la pelicula más arrendada (titulo) por un Staff particular: 
 
+~~~
+SELECT f.title, r.staff_id, count(*) as Cantidad_Max
+FROM film f
+JOIN inventory i USING(film_id)
+JOIN rental r USING (inventory_id)
+WHERE staff_id = 1
+GROUP BY r.staff_id, f.film_id
+ORDER BY Cantidad_Max DESC
+LIMIT 1;
+~~~
 
-
-
-
-
-
+12. Mostrar la pelicula más arrendada (titulo) por cada uno de los miembros del Staff:
+~~~
+(SELECT f.title, r.staff_id, count(*) as Cantidad_Max
+FROM film f
+JOIN inventory i ON f.film_id=i.film_id
+JOIN rental r ON i.inventory_id=r.inventory_id
+WHERE r.staff_id = 1
+GROUP BY r.staff_id, f.film_id
+ORDER BY Cantidad_Max DESC
+LIMIT 1)
+UNION
+(SELECT f.title, r.staff_id, count(*) as Cantidad_Max
+FROM film f
+JOIN inventory i ON f.film_id=i.film_id
+JOIN rental r ON i.inventory_id=r.inventory_id
+WHERE r.staff_id = 2
+GROUP BY r.staff_id, f.film_id
+ORDER BY Cantidad_Max DESC
+LIMIT 1);
+~~~
+13. Mostrar la evolución del volumen de negocio mensual de una tienda dada
 
 
 
