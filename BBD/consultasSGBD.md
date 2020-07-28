@@ -195,8 +195,16 @@ GROUP BY film_id;
 ~~~
 
 7. Mostrar el volumen de negocio (ver tabla Payment) asociado a cada pelicula entre dos fechas, ordenado del volumen de negocio más grande al más pequeño: 
-
-
+~~~
+SELECT f.title,SUM(p.amount) as Volumen 
+FROM film f
+JOIN inventory i ON f.film_id=i.film_id
+JOIN rental r ON i.inventory_id=r.inventory_id 
+JOIN payment p on r.rental_id=p.rental_id 
+WHERE r.rental_date BETWEEN  '2005-05-24' AND '2005-06-01'
+GROUP BY f.film_id
+ORDER BY Volumen DESC;
+~~~
 
 
 
