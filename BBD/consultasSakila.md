@@ -278,10 +278,16 @@ ORDER BY Cantidad_Max DESC
 LIMIT 1);
 ~~~
 13. Mostrar la evolución del volumen de negocio mensual de una tienda dada
-
-
-
-
+~~~
+SELECT YEAR(rental_date) as Año, MONTH(rental_date) AS Mes, SUM(p.amount) AS Volumen
+FROM rental r 
+JOIN payment p ON p.rental_id=r.rental_id
+JOIN staff s ON s.staff_id=p.staff_id
+JOIN store st ON st.store_id=s.store_id
+WHERE st.store_id = 2
+GROUP BY Mes, Año
+ORDER BY Año;
+~~~
 
 
 
