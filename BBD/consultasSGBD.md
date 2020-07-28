@@ -19,9 +19,12 @@ WHERE film_actor.film_id IS NULL;
 
 * ¿Cuáles son los actores sin peliculas?
 
-SELECT 
-
-<code> completar </code>
+~~~
+SELECT fa.actor_id 
+FROM film f 
+RIGHT JOIN film_actor fa USING (film_id) 
+WHERE fa.film_id is NULL;
+~~~
 
 * Mostrar las peliculas arrendadas según el día de la semana:
 
