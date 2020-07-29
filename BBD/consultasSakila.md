@@ -289,7 +289,7 @@ GROUP BY Mes, Año
 ORDER BY Año;
 ~~~
 
-* ¿Cuáles son los actores que más generan volumen de negocio?
+14. ¿Cuáles son los actores que más generan volumen de negocio?
 ~~~
 SELECT a.first_name, a.last_name, SUM(p.amount) as Volumen
 FROM actor a
@@ -302,9 +302,19 @@ GROUP BY a.actor_id
 ORDER BY Volumen DESC
 LIMIT 10;
 ~~~
-
-
-
+15. ¿Cuáles son los actores que jugaron más en pelicula de tipo "Sci-Fi"?
+~~~
+SELECT a.first_name, a.last_name, count(*) AS Veces 
+FROM actor a  
+JOIN film_actor fa ON fa.actor_id=a.actor_id 
+JOIN film f ON f.film_id=fa.film_id 
+JOIN film_category fc ON fc.film_id=f.film_id 
+JOIN category c ON fc.category_id=c.category_id 
+WHERE c.name LIKE 'Sci-Fi' 
+GROUP BY a.actor_id,fc.category_id 
+ORDER BY Veces DESC
+LIMIT 10;
+~~~
 
 
 
