@@ -35,7 +35,7 @@ __R:__ [Respuesta](Diagrama_prueba1_sophia.png)
 
 > **Referencia**(___#nombreFuente,#id_noricia___,frase)
 
-> **Duenos** (___nombreDueño___, tipo)
+> **Dueños** (___nombreDueño___, tipo)
 
 > **Posee**(___nombreDueño,#url_medio,inicio___, fin)
 
