@@ -25,6 +25,8 @@ __R:__ [Respuesta](Diagrama_prueba1_sophia.png)
 
 > **Canales**(___id_canal___,red_social, #url_media)
 
+> **Tener audiencia**(__#id_canal,fecha__,n_followers)
+
 > **Periodistas** (___nombre___,género)
 
 > **Noticias**(___id_noticia___, título, texto, fecha, imagen, #url_media, #nombrePeriodista)
