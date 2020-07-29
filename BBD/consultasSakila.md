@@ -339,6 +339,16 @@ GROUP BY a.actor_id,fc.category_id
 ORDER BY last_name;
 
 
+18. Contar el número de peliculas promedio por actores: 
 
+~~~
+SELECT AVG(Movie)
+FROM (SELECT count(*) as Movie
+	     FROM actor a
+	     JOIN film_actor fi ON fi.actor_id = a.actor_id
+	     JOIN film f ON f.film_id = fi.film_id
+	     GROUP BY first_name, last_name
+	     ORDER BY Movie DESC) as t1;
+~~~
 
 
