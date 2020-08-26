@@ -126,12 +126,6 @@ GROUP BY act.actor_id
 ORDER BY alquileres DESC 
 LIMIT 10;
 ~~~
-
-* ¿Cuál es la película más alquilada de entre las que trabaja Sandra Kilmer?
-~~~.
-
-
-~~~
 ---
 __Ejercicios:__
 
