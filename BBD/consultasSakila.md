@@ -321,16 +321,6 @@ JOIN category c ON fc.category_id=c.category_id
 WHERE c.name NOT LIKE 'Sci-Fi' 
 GROUP BY a.actor_id,fc.category_id
 ORDER BY last_name;
-
-SELECT DISTINCT a.first_name, a.last_name
-FROM actor a  
-JOIN film_actor fa ON fa.actor_id=a.actor_id 
-JOIN film f ON f.film_id=fa.film_id 
-JOIN film_category fc ON fc.film_id=f.film_id 
-JOIN category c ON fc.category_id=c.category_id 
-WHERE fc.category_id=14 is NULL
-GROUP BY a.actor_id,fc.category_id
-ORDER BY last_name;
 ~~~
 
 18. Contar el número de peliculas promedio por actores: 
